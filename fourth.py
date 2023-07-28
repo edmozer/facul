@@ -1,10 +1,9 @@
-# Função para realizar o print de boas-vindas
+# Msg de boas vindas
 def print_boas_vindas():
-    print("Bem-vindo(a) ao Sistema de Gerenciamento de Pessoas!")
-    print("Desenvolvido por [SEU NOME AQUI]")
+    print("Bem-vindo(a) ao Sistema de controle de colaboradores do Edmozer Cavalcante")
 
-# Variável global id_global com valor inicial igual a 0
-id_global = 0
+# Variável global id_global com valor inicial igual a 1 p/ que o id do primeiro colaborador cadastrado nao seja 0
+id_global = 1
 
 # Lista vazia para armazenar os colaboradores
 lista_colaboradores = []
@@ -12,9 +11,18 @@ lista_colaboradores = []
 # Função para cadastrar um novo colaborador
 def cadastrar_colaborador(id):
     global id_global
+    print("****************************************")
+    print("-----MENU CADASTRAR COLABORADOR---------")
     nome = input("Digite o nome do colaborador: ")
     setor = input("Digite o setor do colaborador: ")
-    salario = float(input("Digite o salário do colaborador: "))
+
+    while True:
+        salario_input = input("Digite o salário do colaborador em reais: ")
+        try:
+            salario = float(salario_input)
+            break
+        except ValueError:
+            print("Valor inválido para o salário. Digite um valor numérico válido.")
 
     colaborador = {
         "id": id,
@@ -28,6 +36,8 @@ def cadastrar_colaborador(id):
 
 # Função para consultar os colaboradores
 def consultar_colaborador():
+    print("****************************************")
+    print("-----MENU CONSULTAR COLABORADOR---------")
     print("Opções de consulta:")
     print("1. Consultar Todos")
     print("2. Consultar por Id")
@@ -40,7 +50,11 @@ def consultar_colaborador():
         if lista_colaboradores:
             print("Lista de todos os colaboradores:")
             for colaborador in lista_colaboradores:
-                print(colaborador)
+                print("ID:", colaborador["id"])
+                print("Nome:", colaborador["nome"])
+                print("Setor:", colaborador["setor"])
+                print("Salário:", colaborador["salario"])
+                print("--------")
         else:
             print("Não há colaboradores cadastrados.")
     elif opcao == 2:
@@ -48,7 +62,10 @@ def consultar_colaborador():
         for colaborador in lista_colaboradores:
             if colaborador["id"] == id_consulta:
                 print("Colaborador encontrado:")
-                print(colaborador)
+                print("ID:", colaborador["id"])
+                print("Nome:", colaborador["nome"])
+                print("Setor:", colaborador["setor"])
+                print("Salário:", colaborador["salario"])
                 break
         else:
             print("Colaborador não encontrado.")
@@ -60,7 +77,11 @@ def consultar_colaborador():
                 if not encontrados:
                     print(f"Colaboradores do setor '{setor_consulta}':")
                     encontrados = True
-                print(colaborador)
+                print("ID:", colaborador["id"])
+                print("Nome:", colaborador["nome"])
+                print("Setor:", colaborador["setor"])
+                print("Salário:", colaborador["salario"])
+                print("--------")
         if not encontrados:
             print(f"Nenhum colaborador encontrado no setor '{setor_consulta}'.")
     elif opcao == 4:
@@ -70,6 +91,8 @@ def consultar_colaborador():
 
 # Função para remover um colaborador
 def remover_colaborador():
+    print("****************************************")
+    print("-----MENU REMOVER COLABORADOR---------")
     id_remocao = int(input("Digite o ID do colaborador que deseja remover: "))
     for i, colaborador in enumerate(lista_colaboradores):
         if colaborador["id"] == id_remocao:
@@ -84,11 +107,11 @@ def main():
     print_boas_vindas()
 
     while True:
-        print("\nMenu:")
+        print("\n------------MENU PRINCIPAL----------")
         print("1. Cadastrar Colaborador")
-        print("2. Consultar Colaborador")
+        print("2. Consultar Colaborador(es)")
         print("3. Remover Colaborador")
-        print("4. Encerrar Programa")
+        print("4. Sair")
 
         opcao = int(input("Digite o número da opção desejada: "))
 
