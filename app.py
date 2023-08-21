@@ -17,14 +17,13 @@ def calcular_desconto(valor_unitario, quantidade):
     valor_total_com_desconto = valor_total_sem_desconto - valor_desconto
 
     # Exibindo o resultado
-    print("Bem-vindo ao aplicativo de vendas da Empresa X!")
-    print("Seu nome: [coloque seu nome aqui]")  # Substitua "[coloque seu nome aqui]" pelo seu nome
-    print("Valor unitário do produto: R$", valor_unitario)
-    print("Quantidade do produto:", quantidade)
     print("Valor total sem desconto: R$", valor_total_sem_desconto)
     print(f"Você recebeu um desconto de {desconto}% por unidade!")
     print("Valor total com desconto: R$", valor_total_com_desconto)
 
+
+# Mensagem de boas-vindas
+print("Bem-vindo a loja do Edmozer Souza Cavalcante")
 
 # Recebendo os valores do usuário
 valor_unitario = float(input("Digite o valor unitário do produto: "))
