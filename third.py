@@ -1,6 +1,6 @@
 def cachorro_peso():
 # Solicita ao usuário que digite o peso do cachorro em kg
-  peso = input("Digite o peso do cachorro em kg: \n")
+  peso = input("Digite o peso do cachorro em kg: \n>>")
 
   try:
     # Converte a entrada para um valor numérico
@@ -26,7 +26,7 @@ def cachorro_peso():
 
 def cachorro_pelo():
   # Solicita ao usuário que digite o tipo de pelo do cachorro
-  pelo = input("Digite o tipo de pelo do cachorro: \nc - Curto \nm - Medio \nl - Longo\n")
+  pelo = input("Digite o tipo de pelo do cachorro: \nc - Curto \nm - Medio \nl - Longo\n>>")
   # Verifica a escolha do usuário e retorna o multiplicador correspondente
   if pelo.lower() == "c":
     return 1
@@ -46,7 +46,7 @@ def cachorro_extra():
 
   while True:
     # Exibe as opções de serviços adicionais para o usuário e solicita uma escolha
-    servico_extra = int(input("Deseja adicionar mais algum servico? \n1 - Cortar unhas - R$ 10,00\n2 - Escovar dentes - R$ 12,00\n3 - Limpar orelhas - R$ 15,00\n0 - Não quero mais nada \n"))
+    servico_extra = int(input("Deseja adicionar mais algum servico? \n1 - Cortar unhas - R$ 10,00\n2 - Escovar dentes - R$ 12,00\n3 - Limpar orelhas - R$ 15,00\n0 - Não quero mais nada \n>>"))
 
     if servico_extra == 1:
       valor_extra += 10
