@@ -107,6 +107,7 @@ def main():
     print_boas_vindas()
 
     while True:
+        print("****************************************")
         print("\n------------MENU PRINCIPAL----------")
         print("1. Cadastrar Colaborador")
         print("2. Consultar Colaborador(es)")
